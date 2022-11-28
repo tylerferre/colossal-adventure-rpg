@@ -74,19 +74,6 @@ const name = readline.question("Please input a username to begin: ", {
         die()
     }
 
-
-    // random enemy genorator
-    // randEnemies = (enemies) =>{
- 
-    //     // var item = enemy[randomIndex]
-    //     console.log(randomIndex)
-    //     console.log(enemies.includes(undefined))
-    // }
-
-    let enemies = ["Stormtrooper", "Imperial Guard", "Scout Trooper", "Probe Droid", "Imperial Officer", "Shock Trooper", "Death Trooper"]
-
-
-
     gainItem = () =>{
         inventory.push("credit ")
         console.log("You got a credit!")
@@ -118,7 +105,7 @@ const name = readline.question("Please input a username to begin: ", {
 //Fight
     fight = () =>{
 
-        var enemyHp = 50
+        let enemyHp = 50
         dealDamage1 = () =>{
             enemyHp -= Math.floor(Math.random() * 20) + 10;
             if(enemyHp >= 0){
@@ -191,8 +178,11 @@ const name = readline.question("Please input a username to begin: ", {
         fight()}
     }
 
-    
+     //Enemy list
+     let enemies = ["Stormtrooper", "Imperial Guard", "Scout Trooper", "Probe Droid", "Imperial Officer", "Shock Trooper", "Death Trooper"]
 
+
+    //encounter/random enemy generator
    encounter = () =>{
         var randomEnemies = enemies[Math.floor(Math.random() * enemies.length)] 
         console.log(`It's a ${randomEnemies}`)
@@ -220,7 +210,7 @@ const name = readline.question("Please input a username to begin: ", {
         }
     }
 
-
+    //Buttons/ w, p, x
     while( hp > 0){
        var user = readline.keyIn([" "[" w"]]);
        if(user === "w"){
